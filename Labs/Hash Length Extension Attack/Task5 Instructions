@@ -1,0 +1,11 @@
+1. Run the server
+2. Make changes to verify_mac() in lab.py
+	- real_mac = hmac.new(bytearray(key.encode('utf-8')), msg=message.encode('utf-8','surrogateescape'), digestmod=hashlib.sha256).hexdigest()
+3. In another terminal, run the python code that is listed in the instructions
+	- python
+	- import hmac
+	- import hashlib
+	- key='123456'
+	- message='myname=JamesCogswell&uid=1001&lstcmd=1'
+4. Will get the mac 2490213c2236530503864a4afb2d2aa7844bec83964cc4e0bd6b9d4ffb3980f5
+	- use this mac in the URL: http://www.seedlablenext.com:5000/?myname=JamesCogswell&uid=1001&lstcmd=1&mac=2490213c2236530503864a4afb2d2aa7844bec83964cc4e0bd6b9d4ffb3980f5

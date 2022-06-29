@@ -1,0 +1,7 @@
+Task 2 Request:
+http://www.seedlablenext.com:5000/?myname=JamesCogswell&uid=1001&lstcmd=1&mac=3097c2f38f714e3df2533de01731096140e2ea7f3f1d87536b708906ffe04aa4
+
+
+
+Task 3 & 4 Request:
+http://www.seedlablenext.com:5000/?myname=JamesCogswell&uid=1001&lstcmd=1%80%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%01%68&download=secret.txt&mac=5d5ce46749019a48467f9e1136f310504097d86b392a74e7adb3994e68a1c164

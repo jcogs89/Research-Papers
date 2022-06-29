@@ -1,0 +1,229 @@
+source.c:12: Include file <unistd.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+  Header name matches a POSIX header, but the POSIX library is not selected.
+  (Use -warnposixheaders to inhibit warning)
+source.c:16: Include file <sys/wait.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+source.c:18: Include file <netinet/in.h> matches the name of a POSIX library,
+    but the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+source.c:22: Include file <netdb.h> matches the name of a POSIX library, but
+    the POSIX library is not being used.  Consider using +posixlib or
+    +posixstrictlib to select the POSIX library, or -warnposix to suppress this
+    message.
+< Location unknown >: Field name reused: 
+  Code cannot be parsed.  For help on parse errors, see splint -help
+  parseerrors. (Use -syntax to inhibit warning)
+< Location unknown >: Previous use of 
+source.c: (in function writeSock)
+source.c:58:9: Operands of < have incompatible types (ssize_t, size_t):
+                  byteswrote < len
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+source.c:75:9: Return value type ssize_t does not match declared type int:
+                  byteswrote
+source.c: (in function readSock)
+source.c:83:9: Operands of < have incompatible types (ssize_t, size_t):
+                  bytesread < len
+source.c:100:9: Return value type ssize_t does not match declared type int:
+                   bytesread
+source.c: (in function writeArticle)
+source.c:124:3: Return value (type int) ignored: writeSock(sock, ...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalint to inhibit warning)
+source.c:128:2: Return value (type int) ignored: writeSock(sock, ...
+source.c:130:9: Test expression for while not boolean, type int: 1
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+source.c:133:3: Assignment of int to size_t:
+                   x = readSock(sock, buf, sizeof((buf)) - 1)
+source.c:140:6: Assignment of int to char: buf[y] = 0x0
+  Types are incompatible. (Use -type to inhibit warning)
+source.c:145:3: Return value (type int) ignored: fputs(buf, file)
+source.c:146:7: Test expression for if not boolean, type int: complete
+source.c:152:2: Return value (type int) ignored: writeSock(sock, ...
+source.c:153:2: Return value (type int) ignored: fclose(file)
+source.c:106:8: Variable p declared but not used
+  A variable is declared but never used. Use /*@unused@*/ in front of
+  declaration to suppress message. (Use -varuse to inhibit warning)
+source.c: (in function readArticle)
+source.c:176:3: Return value (type int) ignored: writeSock(sock, ...
+source.c:185:3: Return value (type int) ignored: writeSock(sock, ...
+source.c:188:2: Return value (type int) ignored: fclose(file)
+source.c: (in function listArticles)
+source.c:204:2: Return value (type int) ignored: system("ls ./art...
+source.c:208:26: Function fgets expects arg 2 to be int gets arbitrary unsigned
+                    integral type: sizeof((buf)) - 1
+source.c:208:35: Possibly null storage list passed as non-null param:
+                    fgets (..., list)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+   source.c:206:9: Storage list may become null
+source.c:210:3: Return value (type int) ignored: writeSock(sock, ...
+source.c:213:2: Return value (type int) ignored: fclose(list)
+source.c:193:50: Parameter action not used
+  A function parameter is not used in the body of the function. If the argument
+  is needed for type compatibility or future plans, use /*@unused@*/ in the
+  argument declaration. (Use -paramuse to inhibit warning)
+source.c: (in function command)
+source.c:220:2: Return value (type int) ignored: system(&action[1])
+source.c:217:29: Parameter sock not used
+source.c: (in function addUser)
+source.c:235:2: Assignment of int to char: *p = 0x0
+source.c:237:2: Return value (type int) ignored: snprintf(buf, si...
+source.c:223:29: Parameter sock not used
+source.c: (in function adminFunctions)
+source.c:245:9: Test expression for while not boolean, type int: 1
+source.c:247:3: Return value (type int) ignored: writeSock(sock, ...
+source.c:249:3: Assignment of int to size_t:
+                   len = readSock(sock, action, sizeof((action)))
+source.c:251:7: Operands of == have incompatible types (char, int):
+                   action[0] == 0x26
+  To make char and int types equivalent, use +charint.
+source.c:255:12: Operands of == have incompatible types (char, int):
+                    action[0] == 0x25
+source.c:265:2: Empty return in function declared to return int
+  empty return in function declared to return value (Use -emptyret to inhibit
+  warning)
+source.c:265:2: Unreachable code: return
+  This code will never be reached on any possible execution. (Use -unreachable
+  to inhibit warning)
+source.c: (in function userFunctions)
+source.c:275:3: Return value (type int) ignored: adminFunctions(l...
+source.c:279:9: Test expression for while not boolean, type int: 1
+source.c:281:3: Return value (type int) ignored: writeSock(sock, ...
+source.c:283:3: Assignment of int to size_t:
+                   len = readSock(sock, action, sizeof((action)))
+source.c:285:7: Operands of == have incompatible types (char, int):
+                   action[0] == 0x22
+source.c:289:12: Operands of == have incompatible types (char, int):
+                    action[0] == 0x23
+source.c:293:12: Operands of == have incompatible types (char, int):
+                    action[0] == 0x24
+source.c:304:9: Unreachable code: return 0
+source.c: (in function authenticate)
+source.c:327:2: Return value (type int) ignored: snprintf(userfil...
+source.c:328:2: Return value (type int) ignored: snprintf(search,...
+source.c:336:2: Return value (type int) ignored: snprintf(path, s...
+source.c:348:20: Function fgets expects arg 2 to be int gets arbitrary unsigned
+                    integral type: sizeof((data)) - 1
+source.c:348:2: Return value (type char *) ignored: fgets(data, size...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalother to inhibit warning)
+source.c:350:2: Return value (type int) ignored: fclose(file)
+source.c:353:6: Test expression for if not boolean, type int:
+                   memcmp(data, pass, 3)
+source.c: (in function findarg)
+source.c:365:14: Variable type initialized to type int, expects char: 0
+source.c:370:9: Test expression for while not boolean, type int: 1
+source.c:385:9: Immediate address &argbuf[5] returned as implicitly only (found
+                   aliases &argbuf[5]): found
+  An immediate address (result of & operator) is transferred inconsistently.
+  (Use -immediatetrans to inhibit warning)
+source.c:385:9: Null storage found returned as non-null: found
+  Function returns a possibly null pointer, but is not declared using
+  /*@null@*/ annotation of result.  If function may return NULL, add /*@null@*/
+  annotation to the return value declaration. (Use -nullret to inhibit warning)
+   source.c:364:16: Storage found becomes null
+source.c:365:7: Variable type declared but not used
+source.c: (in function handleConnection)
+source.c:449:25: Function findarg expects arg 2 to be char gets int: 0x01
+source.c:450:25: Function findarg expects arg 2 to be char gets int: 0x02
+source.c:452:2: Return value (type int) ignored: snprintf(buffer,...
+source.c:464:4: Return value (type int) ignored: writeSock(sock, ...
+source.c:469:4: Return value (type int) ignored: writeSock(sock, ...
+source.c:472:3: Return value (type int) ignored: snprintf(buffer,...
+source.c:474:10: Fresh storage user not released before return
+  A memory leak has been detected. Storage allocated locally is not released
+  before the last reference to it is lost. (Use -mustfreefresh to inhibit
+  warning)
+   source.c:449:2: Fresh storage user created
+source.c:474:10: Fresh storage pass not released before return
+   source.c:450:2: Fresh storage pass created
+source.c:479:2: Return value (type int) ignored: userFunctions(lo...
+source.c:481:9: Fresh storage user not released before return
+   source.c:449:2: Fresh storage user created
+source.c:481:9: Fresh storage pass not released before return
+   source.c:450:2: Fresh storage pass created
+source.c: (in function mainLoop)
+source.c:491:10: Dereference of possibly null pointer client: *client
+  A possibly null pointer is dereferenced.  Value is either the result of a
+  function which may return null (in which case, code should check it is not
+  null), or a global, parameter or structure field declared with the null
+  qualifier. (Use -nullderef to inhibit warning)
+   source.c:487:31: Storage client may become null
+source.c:491:9: Function memset expects arg 1 to be void * gets struct
+                   sockaddr_in: *client
+source.c:495:9: Test expression for while not boolean, type int: 1
+source.c:513:4: Return value (type int) ignored: close(clientfd)
+source.c:517:3: Return value (type int) ignored: close(clientfd)
+source.c: (in function spawnhandler)
+source.c:528:28: Passed storage &stat not completely defined:
+                    waitpid (..., &stat, ...)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+source.c:523:23: Parameter signumber not used
+source.c: (in function setupSock)
+source.c:540:13: Unrecognized identifier: SIGCHLD
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+source.c:549:23: Function htons expects arg 1 to be uint16_t gets unsigned
+                    short int: port
+source.c:561:41: Function setsockopt expects arg 5 to be socklen_t gets size_t:
+                    sizeof((opt))
+source.c:567:48: Function bind expects arg 3 to be socklen_t gets size_t:
+                    sizeof((sin))
+source.c: (in function main)
+source.c:593:8: Argument to exit has implementation defined behavior: 1
+  The argument to exit should be 0, EXIT_SUCCESS or EXIT_FAILURE (Use -exitarg
+  to inhibit warning)
+source.c:597:2: Return value (type int) ignored: daemon(0, 0)
+source.c:605:8: Argument to exit has implementation defined behavior: 1
+source.c:582:14: Parameter argc not used
+source.c:582:26: Parameter argv not used
+source.c: (in function logData)
+source.c:622:2: Return value (type int) ignored: vsnprintf(buffer...
+source.c:625:2: Return value (type int) ignored: fflush(logfile)
+source.c:43:6: Function exported but not used outside source: logData
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   source.c:626:1: Definition of logData
+source.c:44:5: Function exported but not used outside source: setupSock
+   source.c:580:1: Definition of setupSock
+source.c:45:5: Function exported but not used outside source: writeSock
+   source.c:76:1: Definition of writeSock
+source.c:46:5: Function exported but not used outside source: readSock
+   source.c:101:1: Definition of readSock
+source.c:47:6: Function exported but not used outside source: mainLoop
+   source.c:521:1: Definition of mainLoop
+source.c:48:6: Function exported but not used outside source: handleConnection
+   source.c:482:1: Definition of handleConnection
+source.c:49:5: Function exported but not used outside source: userFunctions
+   source.c:305:1: Definition of userFunctions
+source.c:50:7: Function exported but not used outside source: findarg
+   source.c:386:1: Definition of findarg
+source.c:51:5: Function exported but not used outside source: authenticate
+   source.c:359:1: Definition of authenticate
+source.c:103:6: Function exported but not used outside source: writeArticle
+   source.c:156:1: Definition of writeArticle
+source.c:159:6: Function exported but not used outside source: readArticle
+   source.c:191:1: Definition of readArticle
+source.c:193:6: Function exported but not used outside source: listArticles
+   source.c:215:1: Definition of listArticles
+source.c:217:6: Function exported but not used outside source: command
+   source.c:221:1: Definition of command
+source.c:223:6: Function exported but not used outside source: addUser
+   source.c:239:1: Definition of addUser
+source.c:241:5: Function exported but not used outside source: adminFunctions
+   source.c:266:1: Definition of adminFunctions
+source.c:523:6: Function exported but not used outside source: spawnhandler
+   source.c:532:1: Definition of spawnhandler
+
