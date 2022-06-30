@@ -1,5 +1,5 @@
 # Research Papers and Labs
-Collection of academic research papers, projects, and labs that I completed during my tenure at George Mason University's Volgenau School of Engineering.
+Collection of academic research papers, projects, and labs that I've completed during my tenure at George Mason University's Volgenau School of Engineering.
 
 ## Labs  
 [Buffer Overflow Attack](https://github.com/jcogs89/Research-Papers-and-Labs/blob/main/Labs/Buffer%20Overflow%20Attack.pdf)  
